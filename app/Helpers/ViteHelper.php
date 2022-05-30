@@ -60,7 +60,11 @@ class ViteHelper
         $scriptModule = [
             '<script type="module" src="' . self::url(self::$manifest[$indexHtml]['file']) . '"></script>'
         ];
-        $scriptPreload = self::preloadAsset(self::$manifest[$indexHtml]['imports']);
+
+        $scriptPreload = [];
+        if (isset(self::$manifest[$indexHtml]['imports'])) {
+            $scriptPreload = self::preloadAsset(self::$manifest[$indexHtml]['imports']);
+        }
 
         $cssPreload = [];
         if (isset(self::$manifest[$indexHtml]['css'])) {
@@ -68,9 +72,11 @@ class ViteHelper
         }
 
         // load css from script preload
-        foreach (self::$manifest[$indexHtml]['imports'] as $import) {
-            if (isset(self::$manifest[$import]['css'])) {
-                $cssPreload = self::preloadAsset(self::$manifest[$import]['css'], 'stylesheet');
+        if (isset(self::$manifest[$indexHtml]['imports'])) {
+            foreach (self::$manifest[$indexHtml]['imports'] as $import) {
+                if (isset(self::$manifest[$import]['css'])) {
+                    $cssPreload = self::preloadAsset(self::$manifest[$import]['css'], 'stylesheet');
+                }
             }
         }
 

@@ -23,6 +23,9 @@
                 LAVITE.user = @json(app()->get('user_info'));
             @endauth
         </script>
+        @production
+            {!! \App\Helpers\ViteHelper::asset('index.html') !!}
+        @endproduction
     </head>
     <body>
         <noscript>
