@@ -81,6 +81,9 @@ export default defineConfig(({ mode }) => {
 
     build: {
       manifest: mode === 'production',
+      outDir: '../public/dist-vt/',
+      emptyOutDir: true,
+      sourcemap: false,
     }
   }
 })
