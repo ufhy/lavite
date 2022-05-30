@@ -9,6 +9,9 @@
   },
   "dependencies": {
     "@vue/composition-api": "^1.6.2",
+    "axios": "^0.27.2",
+    "crypto-es": "^1.2.7",
+    "pinia": "^2.0.14",
     "vue": "2.6.14",
     "vue-router": "3",
     "vuetify": "^2.6.6"

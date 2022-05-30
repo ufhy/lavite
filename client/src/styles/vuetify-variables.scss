@@ -1,0 +1,22 @@
+$color-pack: false;
+
+$material-dark: (
+    'background': #111827,
+    'app-bar': #1f2937,
+    'cards': #1f2937,
+);
+$material-light: (
+    'background': #f3f4f6,
+    'app-bar': #ffffff,
+    'cards': #ffffff,
+);
+
+$body-font-family: Jost, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+$btn-font-sizes: (
+    'x-small': .625rem,
+    'small': .688rem,
+    'default': .75rem,
+    'large': .875rem,
+    'x-large': 1rem
+)

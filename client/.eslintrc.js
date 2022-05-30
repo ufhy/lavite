@@ -16,6 +16,13 @@ module.exports = {
     rules: {
         'no-console': 'warn',
         'no-debugger': 'warn',
+        'no-unused-vars': 'off',
         'quotes': ['error', 'single'],
+    },
+    globals: {
+        LAVITE: true,
+        __VUETIFY_VERSION__: true,
+        __TAILWINDCSS_VERSION__: true,
+        __VITE_VERSION__: true,
     }
 }

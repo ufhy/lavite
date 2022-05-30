@@ -31,12 +31,21 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Fortify::loginView(fn() => view('auth.login'));
-        Fortify::registerView(fn() => view('auth.register'));
-        Fortify::confirmPasswordView(fn() => view('auth.confirm_password'));
-        Fortify::resetPasswordView(fn() => view('auth.reset_password'));
-        Fortify::verifyEmailView(fn() => view('auth.verify_email'));
+        $this->app->singleton(
+            \Laravel\Fortify\Contracts\LogoutResponse::class,
+            \App\Actions\Fortify\LogoutResponse::class,
+        );
+        $this->app->singleton(
+            \Laravel\Fortify\Contracts\PasswordUpdateResponse::class,
+            \App\Actions\Fortify\PasswordUpdateResponse::class,
+        );
 
+        Fortify::loginView(fn() => view('vite'));
+        Fortify::registerView(fn() => view('vite'));
+        Fortify::confirmPasswordView(fn() => view('auth.confirm_password'));
+        Fortify::requestPasswordResetLinkView(fn() => view('vite'));
+        Fortify::resetPasswordView(fn() => view('vite'));
+        Fortify::verifyEmailView(fn() => view('auth.verify_email'));
 
         Fortify::createUsersUsing(CreateNewUser::class);
         Fortify::updateUserProfileInformationUsing(UpdateUserProfileInformation::class);

@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/default', function () {
     return view('welcome');
 });
+
+Route::view('{path}', 'vite')
+    ->where('path', '^(?!ajax|dist-vt|storage|auth|fonts|img|i18n.json).*$')
+    ->name('general');
