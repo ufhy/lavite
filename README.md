@@ -12,3 +12,5 @@ The package used:
 - [Axios](https://axios-http.com/)
 - [Pinia](https://pinia.vuejs.org/)
 - ...
+
+Frontend/Client is cloning from https://github.com/ufhy/vite-vue2-starter
